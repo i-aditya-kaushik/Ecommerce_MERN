@@ -10,7 +10,7 @@ cloudinary.config({
   api_secret: process.env.CLOUD_API_SECRET,
 });
 
-router.post("/upload", auth, adminAuth, (req, res) => {
+router.post("/upload", auth, adminAuth, async(req, res) => {
   try {
     if (!req.files || Object.keys(req.files).length === 0)
       return res.status(400).json({ msg: "No files were uploaded." });
@@ -26,9 +26,9 @@ router.post("/upload", auth, adminAuth, (req, res) => {
       return res.status(400).json({ msg: "File format is incorrect." });
     }
 
-    cloudinary.v2.uploader.upload(
+    const myres = await cloudinary.v2.uploader.upload(
       file.tempFilePath,
-      { folder: "ecommnerce" },
+      { folder: "ecom" },
       async (err, result) => {
         if (err) throw err;
 
@@ -40,7 +40,9 @@ router.post("/upload", auth, adminAuth, (req, res) => {
         });
       }
     );
+    console.log(myres);
   } catch (err) {
+    console.log(err);
     return res.status(500).json({ msg: err.message });
   }
 });
