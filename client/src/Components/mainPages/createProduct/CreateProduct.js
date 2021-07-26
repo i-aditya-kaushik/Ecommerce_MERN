@@ -145,7 +145,7 @@ function CreateProduct() {
           </div>
         ) : (
           <div id="file_img" style={styleUpload}>
-            <img src={images ? images.url : "https://pbs.twimg.com/profile_images/1313268273862111234/v5lsILrK_400x400.jpg"} alt="" />
+            <img src={images ? images.url : "https://www.reliablesoft.net/wp-content/uploads/2019/08/digital-marketing-courses.png"} alt="" />
             <span onClick={handleDestroy}>X</span>
           </div>
         )}

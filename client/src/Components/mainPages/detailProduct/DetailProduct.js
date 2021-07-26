@@ -24,7 +24,7 @@ function DetailProduct() {
   return (
     <>
       <div className="detail">
-        <img src={detailProduct.images ? detailProduct.images.url : "https://www.reliablesoft.net/wp-content/uploads/2019/08/digital-marketing-courses.png"} alt="https://pbs.twimg.com/profile_images/1313268273862111234/v5lsILrK_400x400.jpg" />
+        <img src={detailProduct.images ? detailProduct.images.url : "https://www.reliablesoft.net/wp-content/uploads/2019/08/digital-marketing-courses.png"} alt="https://www.reliablesoft.net/wp-content/uploads/2019/08/digital-marketing-courses.png" />
         <div className="box-detail">
           <div className="row">
             <h2>{detailProduct.title}</h2>
